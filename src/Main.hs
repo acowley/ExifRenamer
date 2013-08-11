@@ -110,7 +110,7 @@ defaultRenamer p = fileRenamer p (nameBuilder "_" [dateName])
 main :: IO ()
 main =
   do args <- getArgs
-     when (args `elem` [["--help"],["-h"],["-help"],["--h"], []])
+     when (args `elem` [["--help"],["-h"],["-help"],["--h"]])
           (putStrLn help >> exitSuccess)
      Args exts pre rec dir <- either error id . parseArgs <$> getArgs
      let exts' = if null exts then defaultExtensions else exts'
